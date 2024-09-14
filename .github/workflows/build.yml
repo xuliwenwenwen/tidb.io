@@ -85,20 +85,21 @@ jobs:
       #   run: npm ci --no-audit --production --ignore-scripts --unsafe-perm
       #   if: steps.prod-dep-caches.outputs.cache-hit != 'true'
 
-      # - name: Archive dist artifacts
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: dist-${{ inputs.build-env }}
-      #     path: |
-      #       next.config.js
-      #       sentry.server.config.js
-      #       sentry.client.config.js
-      #       sentry.properties
-      #       .next/standalone
-      #       ./packages/i18n/locales
-      #       .dockerignore
-      #       Dockerfile
-      #       ./public
+      - name: Archive dist artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ inputs.build-env }}
+          path: |
+            next.config.js
+            sentry.server.config.js
+            sentry.client.config.js
+            sentry.properties
+            .next/standalone
+            ./packages/i18n/locales
+            .dockerignore
+            Dockerfile
+            ./public
+          include-hidden-files: true
 
       # - name: Archive static artifacts
       #   uses: actions/upload-artifact@v4
