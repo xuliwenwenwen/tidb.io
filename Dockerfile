@@ -1,7 +1,7 @@
 FROM node:20.9.0-alpine AS runner
 WORKDIR /app
 
-MAINTAINER tidb-community
+# MAINTAINER tidb-community
 
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.

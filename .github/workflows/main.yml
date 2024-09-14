@@ -8,11 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  # verify:
-  #   uses: ./.github/workflows/verify.yml
+  verify:
+    uses: ./.github/workflows/verify.yml
 
   build-preview:
-    # needs: [ verify ]
+    needs: [ verify ]
     uses: ./.github/workflows/build.yml
     with:
       build-env: preview
